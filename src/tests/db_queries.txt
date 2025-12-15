@@ -1,0 +1,22 @@
+show tables;
+
+select * from ms01_api_authentication_credential;
+select * from ms01_request_response_log;
+select * from sec01_encryption_key;
+select * from logs;
+
+desc ms01_api_authentication_credential;
+
+-- ********For TRUNCATING The data*******
+-- TRUNCATE TABLE MS01_API_Authentication_Credential;
+
+-- ********For Altering Column Sequence*******
+-- desc ms01_api_authentication_credential;
+-- ALTER TABLE ms01_api_authentication_credential MODIFY COLUMN FirstName VARCHAR(50) AFTER LastName;
+
+
+-- commit;
+
+
+-- git init
+--git remote add origin https://github.com/agarwal1986-dot/Agentic_Mstock.git

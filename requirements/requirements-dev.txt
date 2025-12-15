@@ -1,0 +1,3 @@
+pytest==8.3.5                 # Testing framework for unit/integration tests
+loguru==0.7.2                 # Advanced logging with clean syntax and structured output
+black==24.10.0                # Code formatter for consistent style across the project

@@ -1,0 +1,4 @@
+requests>=2.32.5,<3            # HTTP client library; aligns with LangChain, Streamlit, and Responses requirements
+mysql-connector-python==9.0.0  # Official MySQL driver
+python-dotenv==1.2.1           # Loads environment variables
+streamlit==1.40.0              # Web app framework
