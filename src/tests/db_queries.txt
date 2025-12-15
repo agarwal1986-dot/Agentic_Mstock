@@ -28,11 +28,15 @@ desc ms01_api_authentication_credential;
 -- git commit -m "<<CLEAR MESSAGE>>"
 -- git push -u origin main
 
+git diff main..feature-xyz   -- compares 2 different branches
+git diff HEAD~1 HEAD    -- Compares the changes between the previous commit and the current commit.
+git log --oneline --graph --decorate   -- check commit history
+
 Quick Review Commands
 - See your commit history:
 git log --oneline
 -- Compare changes with the previous commit:
-git diff HEAD~1 HEAD
+
 
 --Branching: create a new brancha nd then push it 
 git checkout -b feature/new-auth-flow
@@ -145,6 +149,43 @@ git reset HEAD~1
 
 - If you already pushed to GitHub and want to undo safely:
 git revert ba16c6b
+
+************ REBASE is better Option**********
+
+Merge vs Rebase
+- Merge
+- Combines your branch into main with a new "merge commit".
+- Keeps history intact (you see exactly when branches diverged and joined).
+- Command:
+git checkout main
+git merge feature-xyz
+- Rebase
+- Moves your branch commits on top of main as if they were made sequentially.
+- Creates a cleaner, linear history.
+- Command:
+git checkout feature-xyz
+git rebase main
+- ⚠️ Use carefully if you’ve already pushed, since it rewrites history.
+
+📦 Using Stash
+Sometimes you’re mid‑work but need to switch branches without committing yet:
+git stash
+
+
+- Saves your changes temporarily.
+- Switch branches, do other work.
+- Restore later:
+git stash pop
+
+
+
+🧩 Typical Flow for a Feature
+- Create branch → git checkout -b feature-xyz
+- Commit changes → git add . && git commit -m "message"
+- Push branch → git push origin feature-xyz
+- Review (via pull request or git diff)
+- Merge or rebase into main
+- Delete branch → git branch -d feature-xyz
 
 
 
