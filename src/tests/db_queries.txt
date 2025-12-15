@@ -39,9 +39,20 @@ git log --oneline
 
 
 --Branching: create a new brancha nd then push it 
-git checkout -b feature/new-auth-flow
-git push -u origin feature/new-auth-flow
 
+git checkout -b feature-login main
+# make edits
+git add .
+git commit -m "Implement login feature"
+git push origin feature-login
+git checkout main
+git pull origin main
+git merge feature-login
+git push origin main
+git branch -d feature-login
+git push origin --delete feature-login
+git diff main..DEV_MODULAR_API_SCRIPTS
+git branch -vv  -- run in each branch to ensure both are at same level final check
 
 to remove previous git
 -- -- git rm --cached -r -f pytradingapi-typeB   ## if we need to remove any added file in git add
