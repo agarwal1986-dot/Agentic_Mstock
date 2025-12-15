@@ -21,12 +21,18 @@ desc ms01_api_authentication_credential;
 -- git init
 --git remote add origin https://github.com/agarwal1986-dot/Agentic_Mstock.git
 --git branch -M main
---git add .
--- git add .gitignore
+-- git add .
+-- git add src/tests/db_queries.txt --  for specific files after git status
+-- git add .gitignore --  for specific files after git status
 -- git status
--- git commit -m "Initial commit: project setup with CLI, DB helpers, and .gitignore"
+-- git commit -m "<<CLEAR MESSAGE>>"
 -- git push -u origin main
-need to check what is change 
+
+Quick Review Commands
+- See your commit history:
+git log --oneline
+-- Compare changes with the previous commit:
+git diff HEAD~1 HEAD
 
 --Branching: create a new brancha nd then push it 
 git checkout -b feature/new-auth-flow
@@ -95,5 +101,51 @@ git push origin feature-xyz
 - Commit often: small, meaningful commits make review easier.
 - Review before merging: use git diff or pull requests on platforms like GitHub.
 - Delete merged branches: keeps repo clean.
+
+
+**************** GIT Undo Options*******
+🛠️ Undo Options in Git
+1. Undo the last commit but keep changes (soft reset)
+git reset --soft HEAD~1
+
+
+- Removes the commit but keeps your changes staged.
+- Useful if you just want to rewrite the commit message or adjust files before recommitting.
+
+2. Undo the last commit and unstage changes (mixed reset)
+git reset HEAD~1
+
+
+- Removes the commit and unstages the changes.
+- Your edits remain in the working directory, so you can re‑add and recommit.
+
+3. Undo the last commit and discard changes (hard reset)
+git reset --hard HEAD~1
+
+
+- Completely removes the commit and discards all changes.
+- ⚠️ Be careful: this is irreversible unless you know the commit hash.
+
+4. Undo a commit that’s already pushed (safe way)
+git revert <commit-hash>
+
+
+- Creates a new commit that undoes the changes of the specified commit.
+- This is the preferred way when working with shared repos, because it doesn’t rewrite history.
+
+🔍 Example for Your Case
+Since you just committed Update db_queries.txt with latest changes:
+- If you haven’t pushed yet and want to completely remove it:
+git reset --hard HEAD~1
+
+
+- If you want to keep the changes but redo the commit:
+git reset HEAD~1
+
+
+- If you already pushed to GitHub and want to undo safely:
+git revert ba16c6b
+
+
 
 
