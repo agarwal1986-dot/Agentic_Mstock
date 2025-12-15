@@ -20,3 +20,80 @@ desc ms01_api_authentication_credential;
 
 -- git init
 --git remote add origin https://github.com/agarwal1986-dot/Agentic_Mstock.git
+--git branch -M main
+--git add .
+-- git add .gitignore
+-- git status
+-- git commit -m "Initial commit: project setup with CLI, DB helpers, and .gitignore"
+-- git push -u origin main
+need to check what is change 
+
+--Branching: create a new brancha nd then push it 
+git checkout -b feature/new-auth-flow
+git push -u origin feature/new-auth-flow
+
+
+to remove previous git
+-- -- git rm --cached -r -f pytradingapi-typeB   ## if we need to remove any added file in git add
+-- Remove-Item -Recurse -Force .git   #### remoev current git setup , post this start from git init
+
+******************* GIT Work Flow Branching Explained*********
+
+ Step-by-Step Workflow
+1. Create a New Branch
+git checkout -b feature-xyz
+
+
+- checkout -b creates and switches to a new branch called feature-xyz.
+- Think of this as starting a new "commit history line" from your current point.
+
+2. Make Changes and Commit
+# edit files
+git add .
+git commit -m "Add new feature xyz"
+
+
+- git add . stages all changes.
+- git commit -m "message" saves them in the branch’s history.
+
+3. Review Your Branch
+- Use git log to see commits.
+- Use git diff main..feature-xyz to compare changes between your branch and main.
+
+4. Discard the Branch (if not needed)
+git checkout main
+git branch -d feature-xyz
+
+
+- -d deletes the branch safely (only if merged).
+- Use -D to force delete if you don’t want to keep it.
+
+5. Merge Branch into Main
+git checkout main
+git merge feature-xyz
+
+
+- This integrates your branch’s commits into main.
+- If there are conflicts, Git will ask you to resolve them before completing the merge.
+
+6. Push to Remote (Optional)
+git push origin feature-xyz
+
+
+- This shares your branch with collaborators.
+- After merging, you can also push main to update the remote repository.
+
+🔄 Visualizing the Flow
+- Start on main.
+- Create feature-xyz.
+- Commit changes there.
+- Review differences.
+- Either delete (discard) or merge back into main.
+
+🚀 Best Practices
+- Name branches clearly: e.g., bugfix/login-error or feature/dashboard-ui.
+- Commit often: small, meaningful commits make review easier.
+- Review before merging: use git diff or pull requests on platforms like GitHub.
+- Delete merged branches: keeps repo clean.
+
+
