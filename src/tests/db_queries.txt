@@ -53,6 +53,9 @@ git branch -d feature-login
 git push origin --delete feature-login
 git diff main..DEV_MODULAR_API_SCRIPTS
 git branch -vv  -- run in each branch to ensure both are at same level final check
+*** Now delete the branch********
+git branch -D DEV_MODULAR_API_SCRIPTS
+git push origin --delete DEV_MODULAR_API_SCRIPTS
 
 to remove previous git
 -- -- git rm --cached -r -f pytradingapi-typeB   ## if we need to remove any added file in git add
